@@ -1,0 +1,7 @@
+products\Book.class
+products\Food.class
+products\SalesTaxFreeProduct.class
+products\SalesTaxedProduct.class
+products\MedicalProduct.class
+products\Product.class
+TaxCalculator.class
