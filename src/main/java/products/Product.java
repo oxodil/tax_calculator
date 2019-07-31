@@ -26,15 +26,10 @@ public abstract class Product {
     public Product(String name, float price, boolean doesApplySalesTax, boolean doesApplyImportedGoodsTax) {
         super();
 
-        if (price < 0)
-        {
-            throw new IllegalArgumentException("Price of the product can't be negative.");
-        }
-
-        this.name = name;
-        this.price = price;
-        this.doesApplySalesTax = doesApplySalesTax;
-        this.doesApplyImportedGoodsTax = doesApplyImportedGoodsTax;
+        setName(name);
+        setPrice(price);
+        setDoesApplySalesTax(doesApplySalesTax);
+        setDoesApplyImportedGoodsTax(doesApplyImportedGoodsTax);
 
         prepareTaxForObject();
     }
@@ -51,7 +46,12 @@ public abstract class Product {
     }
 
     private void setPrice(float price) {
-        this.price = price;
+        if (price < 0)
+        {
+            throw new IllegalArgumentException("Price of the product can't be negative.");
+        } else {
+            this.price = price;
+        }
     }
 
     public boolean isDoesApplySalesTax() {

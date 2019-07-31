@@ -27,7 +27,8 @@ public class TaxCalculatorTest {
         System.out.println("Test case 2: Testing if not imported book will have 0 tax value.");
         Book book = new Book("book", 12.49f, false);
 
-        Assert.assertTrue("Has not applied 0 tax but: " + book.getTotalTaxValue(), book.getTotalTaxValue() == 0);
+        int expectedTaxValue = 0;
+        Assert.assertTrue("Has not applied 0 tax but: " + book.getTotalTaxValue(), book.getTotalTaxValue() == expectedTaxValue);
         System.out.println("Not imported book has 0 total tax value.");
     }
 
@@ -36,7 +37,8 @@ public class TaxCalculatorTest {
         Book book = new Book("book", 15.49f, true);
         System.out.println("Test case 3: Testing if not imported book will have 0 tax value.");
 
-        Assert.assertTrue("Has not applied 5 tax but: " + book.getImportedGoodsTaxPercent(), book.getImportedGoodsTaxPercent()==5.00);
+        float expectedTaxValue = 5.00f;
+        Assert.assertTrue("Has not applied 5 tax but: " + book.getImportedGoodsTaxPercent(), book.getImportedGoodsTaxPercent()== expectedTaxValue);
         System.out.println("Imported Book has 5% tax.");
     }
 
@@ -45,7 +47,8 @@ public class TaxCalculatorTest {
         System.out.println("Test case 4: Testing if total price to pay for an imported CD player will be equal to 115.");
         SalesTaxedProduct cdPlayer = new SalesTaxedProduct("CD player", 100.00f, true);
 
-        Assert.assertTrue("Total product value with tax is not equal to 115 but: " + cdPlayer.getPriceWithTax(), cdPlayer.getPriceWithTax() == 115.00);
+        float expectedFinalValue = 115.00f;
+        Assert.assertTrue("Total product value with tax is not equal to 115 but: " + cdPlayer.getPriceWithTax(), cdPlayer.getPriceWithTax() == expectedFinalValue);
         System.out.println("Imported CD player total price is equal to: " + cdPlayer.getPriceWithTax() + " with included total tax of " + cdPlayer.getTotalTaxValue());
 
     }
