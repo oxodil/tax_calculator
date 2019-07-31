@@ -9,7 +9,7 @@ public class TaxCalculatorTest {
 
     @Test
     public void shouldThrowException() {
-        System.out.println("Test case 1: Testing an exception mechanism for incorrect price value");
+        System.out.println("\nTest case 1: Testing an exception mechanism for incorrect price value");
         Boolean isExceptionHasBeenThrown = false;
         try {
             Product book = new Book("book", -12.49f, false);
@@ -24,7 +24,7 @@ public class TaxCalculatorTest {
 
     @Test
     public void shouldApply0TaxForNotImportedBook() {
-        System.out.println("Test case 2: Testing if not imported book will have 0 tax value.");
+        System.out.println("\nTest case 2: Testing if not imported book will have 0 tax value.");
         Book book = new Book("book", 12.49f, false);
 
         int expectedTaxValue = 0;
@@ -35,7 +35,7 @@ public class TaxCalculatorTest {
     @Test
     public void shouldApply5PercentTaxForImportedBook() {
         Book book = new Book("book", 15.49f, true);
-        System.out.println("Test case 3: Testing if not imported book will have 0 tax value.");
+        System.out.println("\nTest case 3: Testing if not imported book will have 0 tax value.");
 
         float expectedTaxValue = 5.00f;
         Assert.assertTrue("Has not applied 5 tax but: " + book.getImportedGoodsTaxPercent(), book.getImportedGoodsTaxPercent()== expectedTaxValue);
@@ -44,7 +44,7 @@ public class TaxCalculatorTest {
 
     @Test
     public void shouldCalculateTotalValueForImportedCDPlayer() {
-        System.out.println("Test case 4: Testing if total price to pay for an imported CD player will be equal to 115.");
+        System.out.println("\nTest case 4: Testing if total price to pay for an imported CD player will be equal to 115.");
         SalesTaxedProduct cdPlayer = new SalesTaxedProduct("CD player", 100.00f, true);
 
         float expectedFinalValue = 115.00f;
@@ -55,7 +55,7 @@ public class TaxCalculatorTest {
 
     @Test
     public void shouldCalculateValuesTestCase1() {
-        System.out.println("Test case 5: Testing a given scenario Input1");
+        System.out.println("\nTest case 5: Testing a given scenario Input1");
 
         Book book = new Book("book", 12.49f, false);
         SalesTaxedProduct musicCD = new SalesTaxedProduct("music CD", 14.99f, false);
@@ -82,7 +82,7 @@ public class TaxCalculatorTest {
 
     @Test
     public void shouldCalculateValuesTestCase2() {
-        System.out.println("Test case 6: Testing a given scenario Input2");
+        System.out.println("\nTest case 6: Testing a given scenario Input2");
         Food importedBoxOfChocolates = new Food("imported box of chocolates", 10.00f, true);
         SalesTaxedProduct importedBottleOfPerfume = new SalesTaxedProduct("imported bottle of perfume", 47.50f, true);
 
@@ -105,7 +105,7 @@ public class TaxCalculatorTest {
 
     @Test
     public void shouldCalculateValuesTestCase3() {
-        System.out.println("Test case 7: Testing a given scenario Input3");
+        System.out.println("\nTest case 7: Testing a given scenario Input3");
         SalesTaxedProduct importedBottleOfPerfume = new SalesTaxedProduct("imported bottle of perfume", 27.99f, true);
         SalesTaxedProduct bottleOfPerfume = new SalesTaxedProduct("bottle of perfume", 18.99f, false);
         MedicalProduct headachePills = new MedicalProduct("packet of headache pills", 9.75f, false);
